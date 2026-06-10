@@ -45,7 +45,6 @@ public class ProductController {
     private final LocalizationUtils localizationUtils;
 
     @PostMapping("")
-    //POST http://localhost:8088/v1/api/products
     public ResponseEntity<?> createProduct(
             @Valid @RequestBody ProductDTO productDTO,
             BindingResult result

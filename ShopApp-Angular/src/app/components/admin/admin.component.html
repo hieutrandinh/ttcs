@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <header class="header bg-success text-white d-flex justify-content-between">
-    <h1 class="header-title">Dashboard Header</h1>
+    <h1 class="header-title">Admin Panel</h1>
     <!-- Logout Button -->
     <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
   </header>
@@ -9,20 +9,17 @@
       <div class="position-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" 
-              (click)="showAdminComponent('orders')">
+            <a class="nav-link" (click)="showAdminComponent('orders')">
               <i class="fab fa-first-order icon"></i>Orders
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" 
-              (click)="showAdminComponent('categories')">
+            <a class="nav-link" (click)="showAdminComponent('categories')">
               <i class="fab fa-canadian-maple-leaf icon"></i>Categories
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" 
-              (click)="showAdminComponent('products')">
+            <a class="nav-link" (click)="showAdminComponent('products')">
               <i class="fab fa-codepen icon"></i>Products
             </a>
           </li>

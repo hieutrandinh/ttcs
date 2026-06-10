@@ -4,16 +4,29 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Category } from '../models/category';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryService {
-  private apiGetCategories  = `${environment.apiBaseUrl}/categories`;
+  private apiGetCategories = `${environment.apiBaseUrl}/categories`;
 
-  constructor(private http: HttpClient) { }
-  getCategories(page: number, limit: number):Observable<Category[]> {
+  constructor(private http: HttpClient) {}
+  getCategories(page: number, limit: number): Observable<Category[]> {
     const params = new HttpParams()
       .set('page', page.toString())
-      .set('limit', limit.toString());     
-      return this.http.get<Category[]>(this.apiGetCategories, { params });           
+      .set('limit', limit.toString());
+    return this.http.get<Category[]>(this.apiGetCategories, { params });
+  }
+  createCategory(categoryData: { name: string }): Observable<any> {
+    return this.http.post(this.apiGetCategories, categoryData);
+  }
+
+  updateCategory(id: number, categoryData: { name: string }): Observable<any> {
+    return this.http.put(`${this.apiGetCategories}/${id}`, categoryData);
+  }
+
+  deleteCategory(id: number): Observable<any> {
+    return this.http.delete(`${this.apiGetCategories}/${id}`, {
+      responseType: 'text',
+    });
   }
 }

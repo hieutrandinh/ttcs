@@ -3,7 +3,7 @@ USE shopapp;
 --Khách hàng khi muốn mua hàng => phải đăng ký tài khoản => bảng users
 CREATE TABLE users(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    fullname VARCHAR(100) DEFAULT '',
+    full_name VARCHAR(100) DEFAULT '',
     phone_number VARCHAR(10) NOT NULL,
     address VARCHAR(200) DEFAULT '',
     password VARCHAR(100) NOT NULL DEFAULT '',
