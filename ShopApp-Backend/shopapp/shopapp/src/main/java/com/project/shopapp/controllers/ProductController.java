@@ -65,7 +65,6 @@ public class ProductController {
     }
     @PostMapping(value = "uploads/{id}",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    //POST http://localhost:8088/v1/api/products
     public ResponseEntity<?> uploadImages(
             @PathVariable("id") Long productId,
             @ModelAttribute("files") List<MultipartFile> files
@@ -113,6 +112,7 @@ public class ProductController {
     public ResponseEntity<?> viewImage(@PathVariable String imageName) {
         try {
             java.nio.file.Path imagePath = Paths.get("uploads/"+imageName);
+            System.out.println(">>> ĐƯỜNG DẪN TÌM ẢNH THỰC TẾ: " + imagePath.toAbsolutePath());
             UrlResource resource = new UrlResource(imagePath.toUri());
 
             if (resource.exists()) {
